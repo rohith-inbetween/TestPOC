@@ -1,9 +1,6 @@
 subprojects{
 	apply plugin: 'java'
 	apply plugin : 'eclipse'
-	apply plugin : 'jetty'
-
-	httpPort = 8090
 	sourceCompatibility = 1.8
 
 	repositories {
