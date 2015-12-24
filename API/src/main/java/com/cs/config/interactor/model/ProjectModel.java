@@ -131,57 +131,49 @@ public class ProjectModel implements IProjectModel {
   @Override
   public IStructureValidator getValidator()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return entity.getValidator();
   }
   
   @Override
   public void setValidator(IStructureValidator validator)
   {
-    // TODO Auto-generated method stub
-    
+    entity.setValidator(validator);
   }
   
   @Override
   public List<IStructure> getStructureChildren()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return entity.getStructureChildren();
   }
   
   @Override
   public void setStructureChildren(List<IStructure> elements)
   {
-    // TODO Auto-generated method stub
-    
+    entity.setStructureChildren(elements);
   }
 
   @Override
   public Date getStartDate()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return entity.getStartDate();
   }
 
   @Override
   public void setStartDate(Date date)
   {
-    // TODO Auto-generated method stub
-    
+    entity.setStartDate(date);
   }
 
   @Override
   public Date getEndDate()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return entity.getEndDate();
   }
 
   @Override
   public void setEndDate(Date date)
   {
-    // TODO Auto-generated method stub
-    
+    entity.setEndDate(date);
   }
   
 }
