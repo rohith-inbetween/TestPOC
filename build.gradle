@@ -1,0 +1,43 @@
+subprojects{
+	apply plugin: 'java'
+	apply plugin : 'eclipse'
+	apply plugin : 'jetty'
+
+	httpPort = 8090
+	sourceCompatibility = 1.8
+
+	repositories {
+	  mavenCentral ()
+	}
+
+	dependencies {
+		def springFrameworkVersion = "4.2.4.RELEASE"
+
+		compile "org.springframework:spring-core:${springFrameworkVersion}"
+		compile "org.springframework:spring-tx:${springFrameworkVersion}"
+		compile "org.springframework:spring-webmvc:${springFrameworkVersion}"
+		compile 'com.fasterxml.jackson.core:jackson-core:2.5.2'
+		compile 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
+
+	}
+}
+
+
+project(':IAPI'){
+	dependencies {
+		compile project(path: ':IEntity')
+	}
+}
+
+project(':API'){
+	dependencies {
+		compile project(path: ':IAPI')
+		compile project(path: ':Entity')
+	}
+}
+
+project(':Entity'){
+	dependencies {
+		compile project(path: ':IEntity')
+	}
+}
