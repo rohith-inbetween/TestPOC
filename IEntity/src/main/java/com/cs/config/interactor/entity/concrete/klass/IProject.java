@@ -9,10 +9,10 @@ public interface IProject extends IKlassStructure {
   
   public Date getStartDate();
   
-  public Date setStartDate();
+  public void setStartDate(Date date);
   
   public Date getEndDate();
   
-  public Date setEndDate();
+  public void setEndDate(Date date);
   
 }
