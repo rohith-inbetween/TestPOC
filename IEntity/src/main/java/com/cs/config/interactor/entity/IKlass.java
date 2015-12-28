@@ -5,10 +5,6 @@ import java.util.Map;
 
 public interface IKlass extends IKlassBasic {
   
-  public IKlass getParent();
-  
-  public void setParent(IKlass parent);
-  
   public List<ISection> getSections();
   
   public void setSections(List<ISection> sections);

@@ -7,8 +7,4 @@ public interface ITag extends ITagBasic {
   
   public void setColor(String color);
   
-  public ITag getParent();
-  
-  public void setParent(ITag parent);
-  
 }

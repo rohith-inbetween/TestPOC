@@ -1,4 +1,4 @@
-package com.cs.config.strategy.file;
+package com.cs.config.strategy.file.relationship;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.cs.config.interactor.entity.IEntity;
-import com.cs.config.interactor.entity.IKlass;
 import com.cs.config.interactor.entity.ISection;
 import com.cs.config.interactor.entity.IStructure;
 import com.cs.config.interactor.entity.IStructureValidator;
@@ -43,18 +42,6 @@ public class ProjectModel implements IProjectModel {
   public void setId(String id)
   {
     entity.setId(id);
-  }
-
-  @Override
-  public IKlass getParent()
-  {
-    return entity.getParent();
-  }
-
-  @Override
-  public void setParent(IKlass parent)
-  {
-    entity.setParent(parent);
   }
 
   @Override
@@ -118,18 +105,6 @@ public class ProjectModel implements IProjectModel {
   }
 
   @Override
-  public List<? extends IKlass> getChildren()
-  {
-    return entity.getChildren();
-  }
-
-  @Override
-  public void setChildren(List<? extends ITreeEntity> children)
-  {
-    entity.setChildren(children);
-  }
-  
-  @Override
   public IStructureValidator getValidator()
   {
     return entity.getValidator();
@@ -175,6 +150,30 @@ public class ProjectModel implements IProjectModel {
   public void setEndDate(Date date)
   {
     entity.setEndDate(date);
+  }
+
+  @Override
+  public ITreeEntity getParent()
+  {
+    return this.entity.getParent();
+  }
+
+  @Override
+  public void setParent(ITreeEntity parent)
+  {
+    this.entity.setParent(parent);
+  }
+
+  @Override
+  public List<? extends ITreeEntity> getChildren()
+  {
+    return this.entity.getChildren();
+  }
+
+  @Override
+  public void setChildren(List<? extends ITreeEntity> children)
+  {
+    this.entity.setChildren(children);
   }
   
 }

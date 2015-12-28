@@ -3,12 +3,11 @@ package com.cs.config.interactor.model;
 import java.util.List;
 
 import com.cs.config.interactor.entity.IEntity;
-import com.cs.config.interactor.entity.ITag;
+import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
 import com.cs.config.interactor.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TagModel implements ITagModel {
   
@@ -53,19 +52,6 @@ public class TagModel implements ITagModel {
   public void setColor(String color)
   {
     entity.setColor(color);
-  }
-  
-  @Override
-  public ITag getParent()
-  {
-    return entity.getParent();
-  }
-  
-  @JsonTypeInfo(use=Id.CLASS, defaultImpl=Tag.class)
-  @Override
-  public void setParent(ITag parent)
-  {
-    entity.setParent(parent);
   }
   
   @Override
@@ -152,16 +138,37 @@ public class TagModel implements ITagModel {
     entity.setIcon(icon);
   }
   
+  //TODO : Find a way to achieve this!!
+//  @JsonTypeInfo(use=Id.CLASS, defaultImpl=Tag.class)
+  @JsonIgnore
   @Override
-  public List getChildren()
+  public void setParent(ITreeEntity parent)
   {
-    return entity.getChildren();
+    this.entity.setParent(parent);
   }
   
-  @Override
-  public void setChildren(List children)
+  @JsonProperty
+  public void setParent(Tag parent)
   {
-    entity.setChildren(children);
+    this.entity.setParent(parent);
+  }
+
+  @Override
+  public ITreeEntity getParent()
+  {
+    return this.entity.getParent();
+  }
+
+  @Override
+  public List<? extends ITreeEntity> getChildren()
+  {
+    return this.entity.getChildren();
+  }
+
+  @Override
+  public void setChildren(List<? extends ITreeEntity> children)
+  {
+    this.entity.setChildren(children);
   }
   
 }

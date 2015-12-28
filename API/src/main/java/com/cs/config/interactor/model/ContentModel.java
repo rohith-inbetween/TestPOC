@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.cs.config.interactor.entity.Content;
 import com.cs.config.interactor.entity.IEntity;
-import com.cs.config.interactor.entity.IKlass;
 import com.cs.config.interactor.entity.ISection;
 import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
@@ -40,18 +39,6 @@ public class ContentModel implements IContentModel{
   public void setId(String id)
   {
     entity.setId(id);
-  }
-
-  @Override
-  public IKlass getParent()
-  {
-    return entity.getParent();
-  }
-
-  @Override
-  public void setParent(IKlass parent)
-  {
-    entity.setParent(parent);
   }
 
   @Override
@@ -115,15 +102,27 @@ public class ContentModel implements IContentModel{
   }
 
   @Override
-  public List<? extends IKlass> getChildren()
+  public ITreeEntity getParent()
   {
-    return entity.getChildren();
+    return this.entity.getParent();
+  }
+
+  @Override
+  public void setParent(ITreeEntity parent)
+  {
+    this.entity.setParent(parent);
+  }
+
+  @Override
+  public List<? extends ITreeEntity> getChildren()
+  {
+    return this.entity.getChildren();
   }
 
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {
-    entity.setChildren(children);
+    this.entity.setChildren(children);
   }
 
 }

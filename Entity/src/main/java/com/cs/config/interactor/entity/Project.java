@@ -5,46 +5,33 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.cs.config.interactor.entity.concrete.klass.IContent;
 import com.cs.config.interactor.entity.concrete.klass.IProject;
 
 public class Project implements IProject {
   
   protected String               id;
-                                 
-  protected IContent             parent;
-                                 
-  protected List<ISection>       sections;
-                                 
-  protected Map<String, Integer> referencedClassIds;
-                                 
-  protected String               label;
-                                 
-  protected IType                type;
-                                 
-  protected String               icon;
-                                 
-  protected List<IContent>       children = new ArrayList<IContent>();
-                                          
-  protected IStructureValidator  validator;
-                                 
-  protected List<IStructure>     structureChildren;
-                                 
-  protected Date                 startDate;
-                                 
-  protected Date                 endDate;
-                                 
-  @Override
-  public IKlass getParent()
-  {
-    return parent;
-  }
   
-  @Override
-  public void setParent(IKlass parent)
-  {
-    this.parent = (IContent) parent;
-  }
+  protected Project              parent;
+  
+  protected List<ISection>       sections;
+  
+  protected Map<String, Integer> referencedClassIds;
+  
+  protected String               label;
+  
+  protected IType                type;
+  
+  protected String               icon;
+  
+  protected List<Project>        children = new ArrayList<>();
+  
+  protected IStructureValidator  validator;
+  
+  protected List<IStructure>     structureChildren;
+  
+  protected Date                 startDate;
+  
+  protected Date                 endDate;
   
   @Override
   public List<ISection> getSections()
@@ -119,18 +106,6 @@ public class Project implements IProject {
   }
   
   @Override
-  public List<? extends IKlass> getChildren()
-  {
-    return children;
-  }
-  
-  @Override
-  public void setChildren(List<? extends ITreeEntity> children)
-  {
-    this.children = (List<IContent>) children;
-  }
-  
-  @Override
   public IStructureValidator getValidator()
   {
     return validator;
@@ -176,6 +151,31 @@ public class Project implements IProject {
   public void setEndDate(Date date)
   {
     this.endDate = date;
+  }
+  
+  @Override
+  public ITreeEntity getParent()
+  {
+    return this.parent;
+  }
+  
+  @Override
+  public void setParent(ITreeEntity parent)
+  {
+    this.parent = (Project) parent;
+  }
+  
+  @Override
+  public List<? extends ITreeEntity> getChildren()
+  {
+    return this.children;
+  }
+  
+  @SuppressWarnings("unchecked")
+  @Override
+  public void setChildren(List<? extends ITreeEntity> children)
+  {
+    this.children = (List<Project>) children;
   }
   
 }

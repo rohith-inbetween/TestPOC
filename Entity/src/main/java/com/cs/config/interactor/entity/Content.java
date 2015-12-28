@@ -10,7 +10,7 @@ public class Content implements IContent {
   
   protected String               id;
                                  
-  protected IContent             parent;
+  protected Content             parent;
                                  
   protected List<ISection>       sections;
                                  
@@ -22,20 +22,8 @@ public class Content implements IContent {
                                  
   protected String               icon;
                                  
-  protected List<IContent>       children = new ArrayList<IContent>();
+  protected List<Content>       children = new ArrayList<>();
   
-  
-  @Override
-  public IKlass getParent()
-  {
-    return parent;
-  }
-  
-  @Override
-  public void setParent(IKlass parent)
-  {
-    this.parent = (IContent) parent;
-  }
   
   @Override
   public List<ISection> getSections()
@@ -115,10 +103,23 @@ public class Content implements IContent {
     return children;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {
-    this.children = (List<IContent>)children;
+    this.children = (List<Content>)children;
+  }
+
+  @Override
+  public ITreeEntity getParent()
+  {
+    return this.parent;
+  }
+
+  @Override
+  public void setParent(ITreeEntity parent)
+  {
+    this.parent = (Content)parent;
   }
   
 }

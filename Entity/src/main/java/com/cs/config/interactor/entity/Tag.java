@@ -23,9 +23,9 @@ public class Tag implements ITag {
                        
   protected String     color;
                        
-  protected ITag       parent;
+  protected Tag       parent;
                        
-  protected List<ITag> children = new ArrayList<ITag>();
+  protected List<Tag> children = new ArrayList<>();
                                 
   @Override
   public String getDescription()
@@ -124,18 +124,6 @@ public class Tag implements ITag {
   }
   
   @Override
-  public List getChildren()
-  {
-    return children;
-  }
-  
-  @Override
-  public void setChildren(List children)
-  {
-    this.children = children;
-  }
-  
-  @Override
   public String getColor()
   {
     return color;
@@ -146,17 +134,30 @@ public class Tag implements ITag {
   {
     this.color = color;
   }
-  
+
   @Override
-  public ITag getParent()
+  public ITreeEntity getParent()
   {
-    return parent;
+    return this.parent;
   }
-  
+
   @Override
-  public void setParent(ITag parent)
+  public void setParent(ITreeEntity parent)
   {
-    this.parent = parent;
+    this.parent = (Tag)parent;
+  }
+
+  @Override
+  public List<? extends ITreeEntity> getChildren()
+  {
+    return this.children;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public void setChildren(List<? extends ITreeEntity> children)
+  {
+    this.children = (List<Tag>)children;    
   }
   
 }
