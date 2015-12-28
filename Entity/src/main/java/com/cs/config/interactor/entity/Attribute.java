@@ -1,25 +1,29 @@
 package com.cs.config.interactor.entity;
 
-
-
 public class Attribute implements IAttribute {
   
-  protected String label;
-
-  protected String description;
+  protected String         id;
   
-  protected String tooltip;
+  protected String         label;
   
-  protected Boolean isMandatory;
+  protected String         description;
   
-  protected String placeholder;
+  protected String         tooltip;
+  
+  protected String         defaultValue;
+  
+  protected Boolean        isMandatory;
+  
+  protected String         placeholder;
+  
+  protected String         icon;
   
   protected IAttributeType type;
   
   @Override
   public String getDescription()
   {
-    return this.getDescription();
+    return this.description;
   }
   
   @Override
@@ -79,55 +83,49 @@ public class Attribute implements IAttribute {
   @Override
   public String getIcon()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return this.icon;
   }
   
   @Override
   public void setIcon(String icon)
   {
-    // TODO Auto-generated method stub
-    
+    this.icon = icon;
   }
   
   @Override
   public String getId()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return this.id;
   }
   
   @Override
   public void setId(String id)
   {
-    // TODO Auto-generated method stub
-    
+    this.id = id;
   }
   
   @Override
   public String getDefaultValue()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return this.defaultValue;
   }
   
   @Override
   public void setDefaultValue(String defaultValue)
   {
-    // TODO Auto-generated method stub
-    
+    this.defaultValue = defaultValue;
   }
-
+  
   @Override
   public IAttributeType getType()
   {
     return this.type;
   }
-
+  
   @Override
   public void setType(IType type)
   {
-    this.type = (IAttributeType)type;
+    this.type = (IAttributeType) type;
   }
-
+  
 }
