@@ -125,7 +125,7 @@ public class Project implements IProject {
   }
   
   @Override
-  public void setChildren(List<? extends IKlass> children)
+  public void setChildren(List<? extends ITreeEntity> children)
   {
     this.children = (List<IContent>) children;
   }

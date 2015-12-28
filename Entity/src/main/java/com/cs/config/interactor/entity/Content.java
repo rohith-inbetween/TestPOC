@@ -114,11 +114,11 @@ public class Content implements IContent {
   {
     return children;
   }
-  
+
   @Override
-  public void setChildren(List<? extends IKlass> children)
+  public void setChildren(List<? extends ITreeEntity> children)
   {
-    this.children = (List<IContent>) children;
+    this.children = (List<IContent>)children;
   }
   
 }

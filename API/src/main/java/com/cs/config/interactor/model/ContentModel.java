@@ -7,6 +7,7 @@ import com.cs.config.interactor.entity.Content;
 import com.cs.config.interactor.entity.IEntity;
 import com.cs.config.interactor.entity.IKlass;
 import com.cs.config.interactor.entity.ISection;
+import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
 
 public class ContentModel implements IContentModel{
@@ -120,7 +121,7 @@ public class ContentModel implements IContentModel{
   }
 
   @Override
-  public void setChildren(List<? extends IKlass> children)
+  public void setChildren(List<? extends ITreeEntity> children)
   {
     entity.setChildren(children);
   }

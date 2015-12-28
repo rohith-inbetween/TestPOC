@@ -9,6 +9,7 @@ import com.cs.config.interactor.entity.IKlass;
 import com.cs.config.interactor.entity.ISection;
 import com.cs.config.interactor.entity.IStructure;
 import com.cs.config.interactor.entity.IStructureValidator;
+import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
 import com.cs.config.interactor.entity.Project;
 
@@ -123,7 +124,7 @@ public class ProjectModel implements IProjectModel {
   }
 
   @Override
-  public void setChildren(List<? extends IKlass> children)
+  public void setChildren(List<? extends ITreeEntity> children)
   {
     entity.setChildren(children);
   }

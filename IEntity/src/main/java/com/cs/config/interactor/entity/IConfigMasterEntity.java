@@ -8,7 +8,7 @@ public interface IConfigMasterEntity extends IConfigEntity {
   
   public IType getType();
   
-  public void setType(IType type);
+  public void setType(IType type) throws Error;
   
   public String getIcon();
   

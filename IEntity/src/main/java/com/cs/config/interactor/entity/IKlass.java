@@ -3,7 +3,7 @@ package com.cs.config.interactor.entity;
 import java.util.List;
 import java.util.Map;
 
-public interface IKlass extends IKlassBasic<IKlass> {
+public interface IKlass extends IKlassBasic {
   
   public IKlass getParent();
   
