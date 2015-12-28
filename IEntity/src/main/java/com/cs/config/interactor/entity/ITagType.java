@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface ITagType extends IType {
 
-  public List<ITagTypeValue> getValues();
+  public List<? extends ITagTypeValue> getValues();
   
-  public void setValues(List<ITagTypeValue> values);
+  public void setValues(List<? extends ITagTypeValue> values);
   
 }

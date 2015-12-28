@@ -4,26 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.cs.config.interactor.entity.concrete.klass.IContent;
+import com.cs.config.interactor.entity.concrete.klass.IContentKlass;
 
-public class Content implements IContent {
+public class ContentKlass implements IContentKlass {
   
   protected String               id;
-                                 
-  protected Content             parent;
-                                 
-  protected List<ISection>       sections;
-                                 
-  protected Map<String, Integer> referencedClassIds;
-                                 
-  protected String               label;
-                                 
-  protected IType                type;
-                                 
-  protected String               icon;
-                                 
-  protected List<Content>       children = new ArrayList<>();
   
+  protected ContentKlass              parent;
+  
+  protected List<ISection>       sections;
+  
+  protected Map<String, Integer> referencedClassIds;
+  
+  protected String               label;
+  
+  protected IType                type;
+  
+  protected String               icon;
+  
+  protected List<ContentKlass>        children = new ArrayList<>();
   
   @Override
   public List<ISection> getSections()
@@ -102,24 +101,24 @@ public class Content implements IContent {
   {
     return children;
   }
-
+  
   @SuppressWarnings("unchecked")
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {
-    this.children = (List<Content>)children;
+    this.children = (List<ContentKlass>) children;
   }
-
+  
   @Override
   public ITreeEntity getParent()
   {
     return this.parent;
   }
-
+  
   @Override
   public void setParent(ITreeEntity parent)
   {
-    this.parent = (Content)parent;
+    this.parent = (ContentKlass) parent;
   }
   
 }

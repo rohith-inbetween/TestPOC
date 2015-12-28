@@ -5,9 +5,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.cs.config.interactor.entity.concrete.klass.IProject;
+import com.cs.config.interactor.entity.concrete.klass.IProjectKlass;
 
-public class Project implements IProject {
+public class Project implements IProjectKlass {
   
   protected String               id;
   

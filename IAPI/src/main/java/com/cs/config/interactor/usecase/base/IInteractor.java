@@ -5,6 +5,6 @@ import com.cs.config.interactor.model.IControllerModel;
 
 public interface IInteractor<T extends IControllerModel> {
   
-  public Object execute(T dataModel);
+  public Object execute(T dataModel) throws Exception;
   
 }

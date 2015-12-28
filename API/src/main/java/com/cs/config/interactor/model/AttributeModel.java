@@ -6,7 +6,7 @@ import com.cs.config.interactor.entity.IAttributeType;
 import com.cs.config.interactor.entity.IEntity;
 import com.cs.config.interactor.entity.IType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 public class AttributeModel implements IAttributeModel {
@@ -109,20 +109,12 @@ public class AttributeModel implements IAttributeModel {
     return attribute.getType();
   }
   
-  //TODO : Find solution to this!!!
-  
-//  @JsonTypeInfo(use=Id.CLASS, defaultImpl=AttributeType.class)
+  @JsonDeserialize(as=AttributeType.class)
   public void setType(IType type)
   {
     attribute.setType(type);
   }
   
-  @JsonProperty
-  public void setType(AttributeType type)
-  {
-    attribute.setType(type);
-  }
-
   @JsonIgnore
   @Override
   public IEntity getEntity()

@@ -1,29 +1,26 @@
 package com.cs.config.interactor.model;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.cs.config.interactor.entity.ContentKlass;
 import com.cs.config.interactor.entity.IEntity;
 import com.cs.config.interactor.entity.ISection;
-import com.cs.config.interactor.entity.IStructure;
-import com.cs.config.interactor.entity.IStructureValidator;
 import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
-import com.cs.config.interactor.entity.Project;
 
-public class ProjectModel implements IProjectModel {
+public class ContentKlassModel implements IContentModel{
+
+  protected ContentKlass entity;
   
-  protected Project entity;
-  
-  public ProjectModel()
+  public ContentKlassModel()
   {
-    entity = new Project();
+    entity = new ContentKlass();
   }
   
-  public ProjectModel(Project project)
+  public ContentKlassModel(ContentKlass content)
   {
-    entity = project;
+    entity = content;
   }
   
   @Override
@@ -105,54 +102,6 @@ public class ProjectModel implements IProjectModel {
   }
 
   @Override
-  public IStructureValidator getValidator()
-  {
-    return entity.getValidator();
-  }
-  
-  @Override
-  public void setValidator(IStructureValidator validator)
-  {
-    entity.setValidator(validator);
-  }
-  
-  @Override
-  public List<IStructure> getStructureChildren()
-  {
-    return entity.getStructureChildren();
-  }
-  
-  @Override
-  public void setStructureChildren(List<IStructure> elements)
-  {
-    entity.setStructureChildren(elements);
-  }
-
-  @Override
-  public Date getStartDate()
-  {
-    return entity.getStartDate();
-  }
-
-  @Override
-  public void setStartDate(Date date)
-  {
-    entity.setStartDate(date);
-  }
-
-  @Override
-  public Date getEndDate()
-  {
-    return entity.getEndDate();
-  }
-
-  @Override
-  public void setEndDate(Date date)
-  {
-    entity.setEndDate(date);
-  }
-
-  @Override
   public ITreeEntity getParent()
   {
     return this.entity.getParent();
@@ -175,5 +124,5 @@ public class ProjectModel implements IProjectModel {
   {
     this.entity.setChildren(children);
   }
-  
+
 }

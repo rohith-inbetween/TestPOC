@@ -7,7 +7,7 @@ import com.cs.config.interactor.entity.ITreeEntity;
 import com.cs.config.interactor.entity.IType;
 import com.cs.config.interactor.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class TagModel implements ITagModel {
   
@@ -138,21 +138,13 @@ public class TagModel implements ITagModel {
     entity.setIcon(icon);
   }
   
-  //TODO : Find a way to achieve this!!
-//  @JsonTypeInfo(use=Id.CLASS, defaultImpl=Tag.class)
-  @JsonIgnore
+  @JsonDeserialize(as=Tag.class)
   @Override
   public void setParent(ITreeEntity parent)
   {
     this.entity.setParent(parent);
   }
   
-  @JsonProperty
-  public void setParent(Tag parent)
-  {
-    this.entity.setParent(parent);
-  }
-
   @Override
   public ITreeEntity getParent()
   {
@@ -165,6 +157,7 @@ public class TagModel implements ITagModel {
     return this.entity.getChildren();
   }
 
+  @JsonDeserialize(contentAs=Tag.class)
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {

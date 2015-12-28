@@ -1,4 +1,4 @@
-package com.cs.config.interactor.usecase;
+package com.cs.config.interactor.usecase.tag;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class SaveTagInteractor implements ISaveTagInteractor {
   ISaveTagStrategy fileSaveTagStrategy;
   
   @Override
-  public Object execute(ITagModel dataModel)
+  public Object execute(ITagModel dataModel) throws Exception
   {
     
     return fileSaveTagStrategy.execute(dataModel);

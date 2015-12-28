@@ -5,7 +5,7 @@ import java.util.Date;
 import com.cs.config.interactor.entity.IKlassStructure;
 
 
-public interface IProject extends IKlassStructure {
+public interface IProjectKlass extends IKlassStructure {
   
   public Date getStartDate();
   

@@ -1,4 +1,4 @@
-package com.cs.config.controller;
+package com.cs.config.controller.tag;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

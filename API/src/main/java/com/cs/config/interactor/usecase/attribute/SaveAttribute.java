@@ -14,7 +14,7 @@ public class SaveAttribute implements ISaveAttribute {
   ISaveAttributeStrategy saveAttributeStrategy;
 
   @Override
-  public Object execute(IAttributeModel attributeModel)
+  public Object execute(IAttributeModel attributeModel) throws Exception
   {
     
     return saveAttributeStrategy.execute(attributeModel);

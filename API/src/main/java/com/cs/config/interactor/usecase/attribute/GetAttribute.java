@@ -14,7 +14,7 @@ public class GetAttribute implements IGetAttribute {
   IGetAttributeStrategy getAttributeStrategy;
 
   @Override
-  public Object execute(IAttributeModel attributeModel)
+  public Object execute(IAttributeModel attributeModel) throws Exception
   {
     return getAttributeStrategy.execute(attributeModel);
   }

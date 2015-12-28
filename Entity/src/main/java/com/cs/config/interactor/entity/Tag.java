@@ -3,6 +3,8 @@ package com.cs.config.interactor.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 public class Tag implements ITag {
   
   protected String     id;
@@ -141,6 +143,7 @@ public class Tag implements ITag {
     return this.parent;
   }
 
+  @JsonDeserialize(as=Tag.class)
   @Override
   public void setParent(ITreeEntity parent)
   {
@@ -153,6 +156,7 @@ public class Tag implements ITag {
     return this.children;
   }
 
+  @JsonDeserialize(contentAs=Tag.class)
   @SuppressWarnings("unchecked")
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
