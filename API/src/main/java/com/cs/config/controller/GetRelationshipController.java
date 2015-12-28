@@ -19,7 +19,7 @@ public class GetRelationshipController implements IConfigController {
   IGetRelationshipInteractor getRelationshipInteractor;
   
   @RequestMapping(value = "/relationship/{id}", method = RequestMethod.GET)
-  public @ResponseBody Object saveRelationship(
+  public @ResponseBody Object getRelationship(
       @PathVariable String id) throws Exception
   {
     RelationshipModel dataTransferModel = new RelationshipModel();

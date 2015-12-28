@@ -3,21 +3,21 @@ package com.cs.config.interactor.entity;
 
 public class Relationship implements IRelationship {
   
-  protected String id;
-  
-  protected String description;
-  
-  protected String tooltip;
-  
+  protected String  id;
+                    
+  protected String  description;
+                    
+  protected String  tooltip;
+                    
   protected boolean isMandatory;
-  
-  protected String placeholder;
-  
-  protected String label;
-  
-  protected IType type;
-  
-  protected String icon;
+                    
+  protected String  placeholder;
+                    
+  protected String  label;
+                    
+  protected IType   type;
+                    
+  protected String  icon;
   
   @Override
   public String getDescription()
