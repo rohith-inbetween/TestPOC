@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.cs.config.interactor.entity.IEntity;
 import com.cs.config.interactor.entity.ITreeEntity;
-import com.cs.config.interactor.entity.IType;
 import com.cs.config.interactor.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -23,7 +22,6 @@ public class TagModel implements ITagModel {
     entity = tag;
   }
   
-  @JsonIgnore
   @Override
   public IEntity getEntity()
   {
@@ -112,18 +110,6 @@ public class TagModel implements ITagModel {
   public void setLabel(String label)
   {
     entity.setLabel(label);
-  }
-  
-  @Override
-  public IType getType()
-  {
-    return entity.getType();
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    entity.setType(type);
   }
   
   @Override

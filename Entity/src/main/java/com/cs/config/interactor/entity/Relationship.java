@@ -80,18 +80,6 @@ public class Relationship implements IRelationship {
   }
   
   @Override
-  public IType getType()
-  {
-    return type;
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    this.type = type;
-  }
-  
-  @Override
   public String getIcon()
   {
     return icon;

@@ -5,9 +5,9 @@ import java.util.Map;
 
 public interface IKlass extends IKlassBasic {
   
-  public List<ISection> getSections();
+  public List<? extends ISection> getSections();
   
-  public void setSections(List<ISection> sections);
+  public void setSections(List<? extends ISection> sections);
   
   public Map<String, Integer> getReferencedClassIds();
   

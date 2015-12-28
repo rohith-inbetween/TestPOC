@@ -7,13 +7,13 @@ import java.util.Map;
 
 import com.cs.config.interactor.entity.concrete.klass.IProjectKlass;
 
-public class Project implements IProjectKlass {
+public class ProjectKlass implements IProjectKlass {
   
   protected String               id;
   
-  protected Project              parent;
+  protected ProjectKlass              parent;
   
-  protected List<ISection>       sections;
+  protected List<Section>       sections;
   
   protected Map<String, Integer> referencedClassIds;
   
@@ -23,7 +23,7 @@ public class Project implements IProjectKlass {
   
   protected String               icon;
   
-  protected List<Project>        children = new ArrayList<>();
+  protected List<ProjectKlass>        children = new ArrayList<>();
   
   protected IStructureValidator  validator;
   
@@ -34,15 +34,16 @@ public class Project implements IProjectKlass {
   protected Date                 endDate;
   
   @Override
-  public List<ISection> getSections()
+  public List<? extends ISection> getSections()
   {
     return sections;
   }
   
+  @SuppressWarnings("unchecked")
   @Override
-  public void setSections(List<ISection> sections)
+  public void setSections(List<? extends ISection> sections)
   {
-    this.sections = sections;
+    this.sections = (List<Section>)sections;
   }
   
   @Override
@@ -67,18 +68,6 @@ public class Project implements IProjectKlass {
   public void setLabel(String label)
   {
     this.label = label;
-  }
-  
-  @Override
-  public IType getType()
-  {
-    return type;
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    this.type = type;
   }
   
   @Override
@@ -162,7 +151,7 @@ public class Project implements IProjectKlass {
   @Override
   public void setParent(ITreeEntity parent)
   {
-    this.parent = (Project) parent;
+    this.parent = (ProjectKlass) parent;
   }
   
   @Override
@@ -175,7 +164,7 @@ public class Project implements IProjectKlass {
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {
-    this.children = (List<Project>) children;
+    this.children = (List<ProjectKlass>) children;
   }
   
 }

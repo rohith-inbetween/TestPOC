@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.config.delivery.controller.base.IConfigController;
 import com.cs.config.interactor.model.TagModel;
-import com.cs.config.interactor.usecase.base.ISaveTagInteractor;
+import com.cs.config.interactor.usecase.base.ISaveTag;
 
 @Controller
 @RequestMapping(value = "/config")
 public class SaveTagController implements IConfigController {
   
   @Autowired
-  ISaveTagInteractor saveTagInteractor;
+  ISaveTag saveTag;
   
-  @RequestMapping(value = "/tag", method = RequestMethod.POST)
+  @RequestMapping(value = "/tag ", method = RequestMethod.POST)
   public @ResponseBody Object saveTag(@RequestBody TagModel dataTransferModel) throws Exception
   {
     
-    return saveTagInteractor.execute(dataTransferModel);
+    return saveTag.execute(dataTransferModel);
   }
 }

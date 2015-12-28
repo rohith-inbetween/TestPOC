@@ -1,4 +1,4 @@
-package com.cs.config.controller.relationship;
+package com.cs.config.controller.contentklass;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.config.delivery.controller.base.IConfigController;
-import com.cs.config.interactor.model.RelationshipModel;
-import com.cs.config.interactor.usecase.base.ISaveRelationship;
+import com.cs.config.interactor.model.ContentKlassModel;
+import com.cs.config.interactor.usecase.base.ISaveKlass;
 
 @Controller
 @RequestMapping(value = "/config")
-public class SaveRelationshipController implements IConfigController {
+public class SaveContentKlassController implements IConfigController {
 
   @Autowired
-  ISaveRelationship saveRelationshipInteractor;
+  ISaveKlass saveContentKlass;
   
-  @RequestMapping(value = "/relationship", method = RequestMethod.POST)
+  @RequestMapping(value = "/contentklass", method = RequestMethod.POST)
   public @ResponseBody Object saveRelationship(
-      @RequestBody RelationshipModel dataTransferModel) throws Exception
+      @RequestBody ContentKlassModel contentKlassModel) throws Exception
   {
     
-    return saveRelationshipInteractor.execute(dataTransferModel);
+    return saveContentKlass.execute(contentKlassModel);
   }
 }

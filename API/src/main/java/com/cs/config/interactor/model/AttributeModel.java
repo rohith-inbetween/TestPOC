@@ -1,12 +1,8 @@
 package com.cs.config.interactor.model;
 
 import com.cs.config.interactor.entity.Attribute;
-import com.cs.config.interactor.entity.AttributeType;
-import com.cs.config.interactor.entity.IAttributeType;
 import com.cs.config.interactor.entity.IEntity;
-import com.cs.config.interactor.entity.IType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 public class AttributeModel implements IAttributeModel {
@@ -104,18 +100,6 @@ public class AttributeModel implements IAttributeModel {
     attribute.setDefaultValue(defaultValue);
   }
 
-  public IAttributeType getType()
-  {
-    return attribute.getType();
-  }
-  
-  @JsonDeserialize(as=AttributeType.class)
-  public void setType(IType type)
-  {
-    attribute.setType(type);
-  }
-  
-  @JsonIgnore
   @Override
   public IEntity getEntity()
   {

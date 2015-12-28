@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.config.delivery.controller.base.IConfigController;
 import com.cs.config.interactor.model.RelationshipModel;
-import com.cs.config.interactor.usecase.base.IGetRelationshipInteractor;
+import com.cs.config.interactor.usecase.base.IGetRelationship;
 
 @Controller
 @RequestMapping(value = "/config")
 public class GetRelationshipController implements IConfigController {
 
   @Autowired
-  IGetRelationshipInteractor getRelationshipInteractor;
+  IGetRelationship getRelationshipInteractor;
   
   @RequestMapping(value = "/relationship/{id}", method = RequestMethod.GET)
   public @ResponseBody Object getRelationship(

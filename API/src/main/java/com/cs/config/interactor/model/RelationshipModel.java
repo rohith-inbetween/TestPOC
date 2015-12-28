@@ -1,11 +1,8 @@
 package com.cs.config.interactor.model;
 
 import com.cs.config.interactor.entity.IEntity;
-import com.cs.config.interactor.entity.IType;
 import com.cs.config.interactor.entity.Relationship;
-import com.cs.config.interactor.entity.RelationshipType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 public class RelationshipModel implements IRelationshipModel {
@@ -22,7 +19,6 @@ public class RelationshipModel implements IRelationshipModel {
     entity = relationship;
   }
   
-  @JsonIgnore
   @Override
   public IEntity getEntity()
   {
@@ -99,19 +95,6 @@ public class RelationshipModel implements IRelationshipModel {
   public void setLabel(String label)
   {
     entity.setLabel(label);
-  }
-  
-  @Override
-  public IType getType()
-  {
-    return entity.getType();
-  }
-  
-  @JsonDeserialize(as=RelationshipType.class)
-  @Override
-  public void setType(IType type)
-  {
-    entity.setType(type);
   }
   
   @Override

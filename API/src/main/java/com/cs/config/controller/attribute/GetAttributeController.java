@@ -16,7 +16,7 @@ import com.cs.config.interactor.usecase.base.IGetAttribute;
 public class GetAttributeController implements IConfigController {
 
   @Autowired
-  IGetAttribute getRelationshipInteractor;
+  IGetAttribute getAttribute;
   
   @RequestMapping(value = "/attribute/{id}", method = RequestMethod.GET)
   public @ResponseBody Object saveRelationship(
@@ -25,6 +25,6 @@ public class GetAttributeController implements IConfigController {
     AttributeModel attributeModel = new AttributeModel();
     attributeModel.setId(id);
     
-    return getRelationshipInteractor.execute(attributeModel);
+    return getAttribute.execute(attributeModel);
   }
 }

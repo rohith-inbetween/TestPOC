@@ -1,4 +1,4 @@
-package com.cs.config.controller.tag;
+package com.cs.config.controller.contentklass;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.config.delivery.controller.base.IConfigController;
-import com.cs.config.interactor.model.TagModel;
-import com.cs.config.interactor.usecase.base.IGetTag;
+import com.cs.config.interactor.model.ContentKlassModel;
+import com.cs.config.interactor.usecase.base.IGetKlass;
 
 @Controller
 @RequestMapping(value = "/config")
-public class GetTagController implements IConfigController {
-  
+public class GetContentKlassController implements IConfigController {
+
   @Autowired
-  IGetTag getTag;
+  IGetKlass getContentKlass;
   
-  @RequestMapping(value = "/tag/{id}", method = RequestMethod.GET)
-  public @ResponseBody Object getTag(
+  @RequestMapping(value = "/contentklass/{id}", method = RequestMethod.GET)
+  public @ResponseBody Object saveRelationship(
       @PathVariable String id) throws Exception
   {
-    TagModel dataTransferModel = new TagModel();
-    dataTransferModel.setId(id);
+    ContentKlassModel contentKlassModel = new ContentKlassModel();
+    contentKlassModel.setId(id);
     
-    return getTag.execute(dataTransferModel);
+    return getContentKlass.execute(contentKlassModel);
   }
 }

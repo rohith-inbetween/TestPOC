@@ -1,7 +1,7 @@
 package com.cs.config.store.strategy.base;
 
-import com.cs.config.interactor.model.IConfigStrategyModel;
+import com.cs.config.interactor.model.IKlassModel;
 
-public interface IGetKlassStrategy<T extends IConfigStrategyModel> extends IConfigStrategy<T> {
+public interface IGetKlassStrategy extends IConfigStrategy<IKlassModel> {
   
 }

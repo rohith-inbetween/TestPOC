@@ -4,6 +4,6 @@ import com.cs.config.interactor.entity.concrete.klass.IProjectKlass;
 
 
 
-public interface IProjectKlassModel extends IConfigControllerModel, IConfigStrategyModel, IProjectKlass {
+public interface IProjectKlassModel extends IKlassModel, IProjectKlass {
 
 }

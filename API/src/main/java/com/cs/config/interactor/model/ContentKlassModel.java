@@ -7,9 +7,12 @@ import com.cs.config.interactor.entity.ContentKlass;
 import com.cs.config.interactor.entity.IEntity;
 import com.cs.config.interactor.entity.ISection;
 import com.cs.config.interactor.entity.ITreeEntity;
-import com.cs.config.interactor.entity.IType;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-public class ContentKlassModel implements IContentModel{
+@JsonTypeInfo(use = Id.NONE)
+public class ContentKlassModel extends AbstractKlassModel implements IContentKlassModel{
 
   protected ContentKlass entity;
   
@@ -42,13 +45,13 @@ public class ContentKlassModel implements IContentModel{
   }
 
   @Override
-  public List<ISection> getSections()
+  public List<? extends ISection> getSections()
   {
     return entity.getSections();
   }
 
   @Override
-  public void setSections(List<ISection> sections)
+  public void setSections(List<? extends ISection> sections)
   {
     entity.setSections(sections);
   }
@@ -78,18 +81,6 @@ public class ContentKlassModel implements IContentModel{
   }
 
   @Override
-  public IType getType()
-  {
-    return entity.getType();
-  }
-
-  @Override
-  public void setType(IType type)
-  {
-    entity.setType(type);
-  }
-
-  @Override
   public String getIcon()
   {
     return entity.getIcon();
@@ -107,6 +98,7 @@ public class ContentKlassModel implements IContentModel{
     return this.entity.getParent();
   }
 
+  @JsonDeserialize(as=ContentKlass.class)
   @Override
   public void setParent(ITreeEntity parent)
   {
@@ -119,6 +111,7 @@ public class ContentKlassModel implements IContentModel{
     return this.entity.getChildren();
   }
 
+  @JsonDeserialize(contentAs=ContentKlass.class)
   @Override
   public void setChildren(List<? extends ITreeEntity> children)
   {

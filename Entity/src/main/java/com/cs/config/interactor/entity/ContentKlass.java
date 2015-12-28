@@ -10,9 +10,9 @@ public class ContentKlass implements IContentKlass {
   
   protected String               id;
   
-  protected ContentKlass              parent;
+  protected ContentKlass         parent;
   
-  protected List<ISection>       sections;
+  protected List<Section>       sections;
   
   protected Map<String, Integer> referencedClassIds;
   
@@ -22,18 +22,19 @@ public class ContentKlass implements IContentKlass {
   
   protected String               icon;
   
-  protected List<ContentKlass>        children = new ArrayList<>();
+  protected List<ContentKlass>   children = new ArrayList<>();
   
   @Override
-  public List<ISection> getSections()
+  public List<? extends ISection> getSections()
   {
     return sections;
   }
   
+  @SuppressWarnings("unchecked")
   @Override
-  public void setSections(List<ISection> sections)
+  public void setSections(List<? extends ISection> sections)
   {
-    this.sections = sections;
+    this.sections = (List<Section>)sections;
   }
   
   @Override
@@ -58,18 +59,6 @@ public class ContentKlass implements IContentKlass {
   public void setLabel(String label)
   {
     this.label = label;
-  }
-  
-  @Override
-  public IType getType()
-  {
-    return type;
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    this.type = type;
   }
   
   @Override

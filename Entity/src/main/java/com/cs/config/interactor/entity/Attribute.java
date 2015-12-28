@@ -18,8 +18,6 @@ public class Attribute implements IAttribute {
   
   protected String         icon;
   
-  protected IAttributeType type;
-  
   @Override
   public String getDescription()
   {
@@ -114,18 +112,6 @@ public class Attribute implements IAttribute {
   public void setDefaultValue(String defaultValue)
   {
     this.defaultValue = defaultValue;
-  }
-  
-  @Override
-  public IAttributeType getType()
-  {
-    return this.type;
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    this.type = (IAttributeType) type;
   }
   
 }

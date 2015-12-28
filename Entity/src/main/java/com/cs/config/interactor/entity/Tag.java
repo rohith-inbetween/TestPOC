@@ -90,18 +90,6 @@ public class Tag implements ITag {
   }
   
   @Override
-  public IType getType()
-  {
-    return type;
-  }
-  
-  @Override
-  public void setType(IType type)
-  {
-    this.type = type;
-  }
-  
-  @Override
   public String getIcon()
   {
     return icon;

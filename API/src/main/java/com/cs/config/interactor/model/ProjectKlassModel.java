@@ -9,19 +9,21 @@ import com.cs.config.interactor.entity.ISection;
 import com.cs.config.interactor.entity.IStructure;
 import com.cs.config.interactor.entity.IStructureValidator;
 import com.cs.config.interactor.entity.ITreeEntity;
-import com.cs.config.interactor.entity.IType;
-import com.cs.config.interactor.entity.Project;
+import com.cs.config.interactor.entity.ProjectKlass;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
-public class ProjectKlassModel implements IProjectKlassModel {
+@JsonTypeInfo(use = Id.NONE)
+public class ProjectKlassModel extends AbstractKlassModel implements IProjectKlassModel {
   
-  protected Project entity;
+  protected ProjectKlass entity;
   
   public ProjectKlassModel()
   {
-    entity = new Project();
+    entity = new ProjectKlass();
   }
   
-  public ProjectKlassModel(Project project)
+  public ProjectKlassModel(ProjectKlass project)
   {
     entity = project;
   }
@@ -45,13 +47,13 @@ public class ProjectKlassModel implements IProjectKlassModel {
   }
 
   @Override
-  public List<ISection> getSections()
+  public List<? extends ISection> getSections()
   {
     return entity.getSections();
   }
 
   @Override
-  public void setSections(List<ISection> sections)
+  public void setSections(List<? extends ISection> sections)
   {
     entity.setSections(sections);
   }
@@ -78,18 +80,6 @@ public class ProjectKlassModel implements IProjectKlassModel {
   public void setLabel(String label)
   {
     entity.setLabel(label);
-  }
-
-  @Override
-  public IType getType()
-  {
-    return entity.getType();
-  }
-
-  @Override
-  public void setType(IType type)
-  {
-    entity.setType(type);
   }
 
   @Override
