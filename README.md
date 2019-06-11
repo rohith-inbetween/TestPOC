@@ -39,3 +39,4 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 #Made some changes.
 Commented above change
+Changed
