@@ -8,7 +8,7 @@
   <project name="pxp-core"/>
   <project name="pxp-dam"/>
   <project name="pxp-di"/>
-  <project name="pxp-etl"/>
+  <project name="pxp-etl" revision="master"/>
   <project name="pxp-mxm"/>
   <project name="pxp-pim"/>
   <project name="pxp-print"/>
