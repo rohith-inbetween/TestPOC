@@ -11,7 +11,7 @@
   <project name="pxp-etl" revision="master"/>
   <project name="pxp-mxm"/>
   <project name="pxp-pim"/>
-  <project name="pxp-print"/>
+  <project name="pxp-print" revision="master"/>
   <project name="pxp-technical-services"/>
   <project name="pxp-ui"/>
   <project name="pxp-backgroundprocess-implementation"/>
