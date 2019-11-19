@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="gitlabroot" fetch="https://gitlab.contentserv.com/root"/>
+  <remote fetch="https://gitlab.contentserv.com/rdbms" name="gitlabrdbms"/>
+  <default revision="architecture" remote="gitlabroot"/>
+
+  <project name="pxp-core"/>
+  <project name="pxp-dam"/>
+  <project name="pxp-di"/>
+  <project name="pxp-etl"/>
+  <project name="pxp-mxm"/>
+  <project name="pxp-pim"/>
+  <project name="pxp-print"/>
+  <project name="pxp-technical-services"/>
+  <project name="pxp-ui"/>
+  <project name="pxp-backgroundprocess-implementation"/>
+  <project name="pxp-rdbms-implementation" remote="gitlabrdbms"/>
+  <project name="pxp-rdbms-interface" remote="gitlabrdbms"/>
+
+</manifest>
